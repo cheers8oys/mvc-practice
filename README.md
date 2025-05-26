@@ -1,2 +1,2 @@
-# mvc-practice
-mvc-practice
+# Study for mvc-pattern
+
