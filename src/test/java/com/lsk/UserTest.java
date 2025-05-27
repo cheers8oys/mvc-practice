@@ -29,7 +29,7 @@ class UserTest  {
         User user = new User();
 
         //When
-        user.initPassword(new CorrectFixedPasswordGenerator());
+        user.initPassword(() -> "12345678");
 
         //Then
         assertThat(user.getPassword()).isNotNull();
@@ -43,7 +43,7 @@ class UserTest  {
         User user = new User();
 
         //When
-        user.initPassword(new WrongFixedPasswordGenerator());
+        user.initPassword(() -> "ab");
 
         //Then
         assertThat(user.getPassword()).isNull();
