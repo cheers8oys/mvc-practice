@@ -13,4 +13,5 @@ public class PasswordValidatorTest {
          assertThatCode(() -> PasswordValidator.validate("password1234"))
                  .doesNotThrowAnyException();
     }
+
 }

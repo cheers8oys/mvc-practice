@@ -1,6 +1,9 @@
 # Study for mvc-pattern
 
 
+
+# [250527위키]
+
 ## 테스트코드를 작성하는 이유?
 1. 문서화 역할
 2. 코드에 결함을 발견하기 위함
@@ -18,4 +21,12 @@ BDD (Behavior Driven Development)
 
 보통은 TDD, BDD을 혼용해서 많이 사용한다.
 
+cmd + N : 제네레이터 단축키 (메서드 생성 등)
 
+[리팩토링 Extract]
+1. 변수 추출하기 (Extract -> Variable)
+- MacOS: Cmd + Opt + v
+2. 파라미터 추출하기 (Extract -> Parameter)
+- MacOS: Cmd + Opt + p
+3. 메서드 추출하기 (Extract -> Method)
+- MacOS: Cmd + Opt + m
