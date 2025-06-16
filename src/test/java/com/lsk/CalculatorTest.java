@@ -1,6 +1,7 @@
 package com.lsk;
 
 
+import com.lsk.calculate.PositiveNumber;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,6 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 /**
@@ -27,7 +29,7 @@ public class CalculatorTest {
     @MethodSource("formulaAndResult")
     void calculateTest(int operand1, String operator, int operand2) {
 
-        int calculateResult = Calculator.calculate(1, "+", 2);
+        int calculateResult  = Calculator.calculate(new PositiveNumber(1), "+", new PositiveNumber(2));
         assertThat(calculateResult).isEqualTo(3);
 
     }
@@ -41,5 +43,17 @@ public class CalculatorTest {
          );
     }
 
+
+    /**
+     * PositivieNumber로 인해 이미 IllegalArgument 예외처리가 되므로 이 테스트는 의미 없어졌고
+     * 대신에 PositiveNubmerTest를 이용해서 0 또는 음수가 정상적으로 전달되지 않는지 확인해보는 테스트 해봐야 함.
+     */
+
+//    @Test
+//    @DisplayName("나눗셈에서 0을 나누는 경우 IllegalArgument 예외를 발생시킨다.")
+//    void calculateException(){
+//        assertThatCode(() -> Calculator.calculate(new PositiveNumber(10), "/", new PositiveNumber(0)))
+//                .isInstanceOf(IllegalArgumentException.class);
+//    }
 
 }
